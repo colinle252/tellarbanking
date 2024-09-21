@@ -1,0 +1,251 @@
+{
+	"info": {
+		"_postman_id": "9c09ab17-80e9-45a8-833e-8c3b9da8f5d6",
+		"name": "Temu",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2197223"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-acc-jwt",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl9uYW1lIjoiaWRfdG9rZW4iLCJpc3MiOiJEQ19PQXV0aCIsInN1YiI6IjVhMjBjMGIyLWFlMzAtNDkzOS05ZmNjLWQ1MjYyYWE4MzhhOSIsInN1Yl90eXBlIjoiQUNDRVNTX0NPREUiLCJhdWQiOiJCViIsImV4cCI6MTY1OTk5NTM0MywiaWF0IjoxNjU5OTM1NDExLCJhdXRoX3RpbWUiOjE2NTk5MzU0MTEsIm5vbmNlIjpudWxsLCJqdGkiOiJkZTRhMjMzZC01ODhjLTRlM2QtYjM0ZC1kZjQ2ZjcwMzQyN2QiLCJuYmYiOjE2NTk5MzU0MTEsImFtciI6WyJwd2QiXSwiaWFsIjoiMUZBIiwiY3VzdG9tIjp7ImxvZ2luX2lkIjoiU1VDSEFORUoiLCJjb3JwSWQiOiIzMDJkMzZjYy04MzYzLTQwOWMtOTQyNS1hMmEzNjVmNmYxMmYiLCJsYW5faWQiOiIiLCJ1c2VyX2lkIjoiNWEyMGMwYjItYWUzMC00OTM5LTlmY2MtZDUyNjJhYTgzOGE5Iiwib3JnX2lkIjoiU1lTIiwiY2lmX25vIjoiIiwiYWNjZXNzX2NvZGUiOiIiLCJsZWdhbF9uYW1lIjoic3VjaGFuZWoiLCJjdXN0b21lcl9pZCI6IjVhMjBjMGIyLWFlMzAtNDkzOS05ZmNjLWQ1MjYyYWE4MzhhOSIsIm9yZ19uYW1lIjoiU1lTIiwidXNlcklkIjoiNWEyMGMwYjItYWUzMC00OTM5LTlmY2MtZDUyNjJhYTgzOGE5IiwidWVuIjoiIn19.NEkRNV1nutAsWOFLj3ugQnaiG-EiUtuXdp2IUR7hzYU"
+					},
+					{
+						"key": "x-source-id",
+						"value": "BO"
+					},
+					{
+						"key": "x-correlation-id",
+						"value": "1112"
+					},
+					{
+						"key": "x-source-country",
+						"value": "SG"
+					},
+					{
+						"key": "x-source-date-time",
+						"value": "2020-08-24 00:00:00"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"companyName\": \"company1\",\n  \"name\": \"Colin\",\n  \"email\": \"colin.le@company1.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/api/employee/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"api",
+						"employee",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check Balance",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-acc-jwt",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl9uYW1lIjoiaWRfdG9rZW4iLCJpc3MiOiJEQ19PQXV0aCIsInN1YiI6IjVhMjBjMGIyLWFlMzAtNDkzOS05ZmNjLWQ1MjYyYWE4MzhhOSIsInN1Yl90eXBlIjoiQUNDRVNTX0NPREUiLCJhdWQiOiJCViIsImV4cCI6MTY1OTk5NTM0MywiaWF0IjoxNjU5OTM1NDExLCJhdXRoX3RpbWUiOjE2NTk5MzU0MTEsIm5vbmNlIjpudWxsLCJqdGkiOiJkZTRhMjMzZC01ODhjLTRlM2QtYjM0ZC1kZjQ2ZjcwMzQyN2QiLCJuYmYiOjE2NTk5MzU0MTEsImFtciI6WyJwd2QiXSwiaWFsIjoiMUZBIiwiY3VzdG9tIjp7ImxvZ2luX2lkIjoiU1VDSEFORUoiLCJjb3JwSWQiOiIzMDJkMzZjYy04MzYzLTQwOWMtOTQyNS1hMmEzNjVmNmYxMmYiLCJsYW5faWQiOiIiLCJ1c2VyX2lkIjoiNWEyMGMwYjItYWUzMC00OTM5LTlmY2MtZDUyNjJhYTgzOGE5Iiwib3JnX2lkIjoiU1lTIiwiY2lmX25vIjoiIiwiYWNjZXNzX2NvZGUiOiIiLCJsZWdhbF9uYW1lIjoic3VjaGFuZWoiLCJjdXN0b21lcl9pZCI6IjVhMjBjMGIyLWFlMzAtNDkzOS05ZmNjLWQ1MjYyYWE4MzhhOSIsIm9yZ19uYW1lIjoiU1lTIiwidXNlcklkIjoiNWEyMGMwYjItYWUzMC00OTM5LTlmY2MtZDUyNjJhYTgzOGE5IiwidWVuIjoiIn19.NEkRNV1nutAsWOFLj3ugQnaiG-EiUtuXdp2IUR7hzYU"
+					},
+					{
+						"key": "x-source-id",
+						"value": "BO"
+					},
+					{
+						"key": "x-correlation-id",
+						"value": "1112"
+					},
+					{
+						"key": "x-source-country",
+						"value": "SG"
+					},
+					{
+						"key": "x-source-date-time",
+						"value": "2020-08-24 00:00:00"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"companyName\": \"company1\",\n  \"name\": \"Colin\",\n  \"email\": \"colin.le@company1.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/api/employee/checkBalance",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"api",
+						"employee",
+						"checkBalance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Balance",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-acc-jwt",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl9uYW1lIjoiaWRfdG9rZW4iLCJpc3MiOiJEQ19PQXV0aCIsInN1YiI6IjVhMjBjMGIyLWFlMzAtNDkzOS05ZmNjLWQ1MjYyYWE4MzhhOSIsInN1Yl90eXBlIjoiQUNDRVNTX0NPREUiLCJhdWQiOiJCViIsImV4cCI6MTY1OTk5NTM0MywiaWF0IjoxNjU5OTM1NDExLCJhdXRoX3RpbWUiOjE2NTk5MzU0MTEsIm5vbmNlIjpudWxsLCJqdGkiOiJkZTRhMjMzZC01ODhjLTRlM2QtYjM0ZC1kZjQ2ZjcwMzQyN2QiLCJuYmYiOjE2NTk5MzU0MTEsImFtciI6WyJwd2QiXSwiaWFsIjoiMUZBIiwiY3VzdG9tIjp7ImxvZ2luX2lkIjoiU1VDSEFORUoiLCJjb3JwSWQiOiIzMDJkMzZjYy04MzYzLTQwOWMtOTQyNS1hMmEzNjVmNmYxMmYiLCJsYW5faWQiOiIiLCJ1c2VyX2lkIjoiNWEyMGMwYjItYWUzMC00OTM5LTlmY2MtZDUyNjJhYTgzOGE5Iiwib3JnX2lkIjoiU1lTIiwiY2lmX25vIjoiIiwiYWNjZXNzX2NvZGUiOiIiLCJsZWdhbF9uYW1lIjoic3VjaGFuZWoiLCJjdXN0b21lcl9pZCI6IjVhMjBjMGIyLWFlMzAtNDkzOS05ZmNjLWQ1MjYyYWE4MzhhOSIsIm9yZ19uYW1lIjoiU1lTIiwidXNlcklkIjoiNWEyMGMwYjItYWUzMC00OTM5LTlmY2MtZDUyNjJhYTgzOGE5IiwidWVuIjoiIn19.NEkRNV1nutAsWOFLj3ugQnaiG-EiUtuXdp2IUR7hzYU"
+					},
+					{
+						"key": "x-source-id",
+						"value": "BO"
+					},
+					{
+						"key": "x-correlation-id",
+						"value": "1112"
+					},
+					{
+						"key": "x-source-country",
+						"value": "SG"
+					},
+					{
+						"key": "x-source-date-time",
+						"value": "2020-08-24 00:00:00"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/api/employee/allBalance?page=0&size=10&sort=name,asc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"api",
+						"employee",
+						"allBalance"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "10"
+						},
+						{
+							"key": "sort",
+							"value": "name,asc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Balance",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-acc-jwt",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl9uYW1lIjoiaWRfdG9rZW4iLCJpc3MiOiJEQ19PQXV0aCIsInN1YiI6IjVhMjBjMGIyLWFlMzAtNDkzOS05ZmNjLWQ1MjYyYWE4MzhhOSIsInN1Yl90eXBlIjoiQUNDRVNTX0NPREUiLCJhdWQiOiJCViIsImV4cCI6MTY1OTk5NTM0MywiaWF0IjoxNjU5OTM1NDExLCJhdXRoX3RpbWUiOjE2NTk5MzU0MTEsIm5vbmNlIjpudWxsLCJqdGkiOiJkZTRhMjMzZC01ODhjLTRlM2QtYjM0ZC1kZjQ2ZjcwMzQyN2QiLCJuYmYiOjE2NTk5MzU0MTEsImFtciI6WyJwd2QiXSwiaWFsIjoiMUZBIiwiY3VzdG9tIjp7ImxvZ2luX2lkIjoiU1VDSEFORUoiLCJjb3JwSWQiOiIzMDJkMzZjYy04MzYzLTQwOWMtOTQyNS1hMmEzNjVmNmYxMmYiLCJsYW5faWQiOiIiLCJ1c2VyX2lkIjoiNWEyMGMwYjItYWUzMC00OTM5LTlmY2MtZDUyNjJhYTgzOGE5Iiwib3JnX2lkIjoiU1lTIiwiY2lmX25vIjoiIiwiYWNjZXNzX2NvZGUiOiIiLCJsZWdhbF9uYW1lIjoic3VjaGFuZWoiLCJjdXN0b21lcl9pZCI6IjVhMjBjMGIyLWFlMzAtNDkzOS05ZmNjLWQ1MjYyYWE4MzhhOSIsIm9yZ19uYW1lIjoiU1lTIiwidXNlcklkIjoiNWEyMGMwYjItYWUzMC00OTM5LTlmY2MtZDUyNjJhYTgzOGE5IiwidWVuIjoiIn19.NEkRNV1nutAsWOFLj3ugQnaiG-EiUtuXdp2IUR7hzYU"
+					},
+					{
+						"key": "x-source-id",
+						"value": "BO"
+					},
+					{
+						"key": "x-correlation-id",
+						"value": "1112"
+					},
+					{
+						"key": "x-source-country",
+						"value": "SG"
+					},
+					{
+						"key": "x-source-date-time",
+						"value": "2020-08-24 00:00:00"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"companyName\": \"company1\",\n  \"name\": \"Colin\",\n  \"email\": \"colin.le@company1.com\",\n  \"balance\": \"2000\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/api/employee/updateBalance",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"api",
+						"employee",
+						"updateBalance"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
