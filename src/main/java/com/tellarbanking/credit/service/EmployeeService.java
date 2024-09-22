@@ -3,7 +3,6 @@ package com.tellarbanking.credit.service;
 import com.tellarbanking.credit.converter.EmployeeConverter;
 import com.tellarbanking.credit.dto.EmployeeDTO;
 import com.tellarbanking.credit.entity.Account;
-import com.tellarbanking.credit.entity.Company;
 import com.tellarbanking.credit.entity.Employee;
 import com.tellarbanking.credit.entity.Transaction;
 import com.tellarbanking.credit.model.request.EmployeeRequest;
