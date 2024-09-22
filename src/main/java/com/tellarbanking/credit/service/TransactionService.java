@@ -12,10 +12,10 @@ public class TransactionService {
     private TransactionRepository transactionRepository;
 
     /**
-     * Registers a new employee.
+     * Create a new transaction record
      *
-     * @param transaction The ID of the company to which the employee belongs.
-     * @return The registered employee.
+     * @param transaction The transaction record to create.
+     * @return The new transaction.
      */
     public Transaction createTransaction(Transaction transaction) {
         return transactionRepository.save(transaction);

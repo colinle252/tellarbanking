@@ -15,7 +15,9 @@ public class EmployeeRequest {
 
     private String balance;
 
-//    private String dateOfBirth;
-//    private String phone;
-//    private String hireDate;
+    /*
+    private String dateOfBirth;
+    private String phone;
+    private String hireDate;
+     */
 }

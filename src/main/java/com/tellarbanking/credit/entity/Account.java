@@ -19,7 +19,9 @@ public class Account extends BaseEntity {
     @Column(name = "balance")
     private BigDecimal balance;
 
-//    private String accountType;
-//    private String createdDate;
-//    private String status;
+    /*
+    private String accountType;
+    private String createdDate;
+    private String status;
+     */
 }

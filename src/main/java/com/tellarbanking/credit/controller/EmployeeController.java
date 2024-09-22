@@ -29,23 +29,27 @@ public class EmployeeController {
     @PostMapping("/register")
     public ResponseEntity<EmployeeDTO> registerEmployee(@Validated @RequestBody EmployeeRequest request) {
         // Call the service to register the employee
-//        Employee registeredEmployee = employeeService.registerEmployee(request);
-
         return ResponseEntity.ok(employeeService.registerEmployee(request));
     }
 
     /**
-     * Endpoint to register a new employee.
+     * Endpoint to get credit balance of an employee
      *
-     * @param request The employee registration request.
-     * @return The registered employee.
+     * @param request The employee information request.
+     * @return The registered employee with the balance
      */
     @PostMapping("/checkBalance")
     public ResponseEntity<EmployeeDTO> getCreditBalance(@Validated @RequestBody EmployeeRequest request) {
-        // Call the service to register the employee
+        // Call the service to get credit balance
         return ResponseEntity.ok(employeeService.checkCreditBalance(request));
     }
 
+    /**
+     * Endpoint to get credit balance of an employee
+     *
+     * @param pageable The page size sorting order for result list of employees
+     * @return The list of employees with their balance
+     */
     @GetMapping("/allBalance")
     public ResponseEntity<List<EmployeeDTO>> getAllEmployeeBalance(Pageable pageable) {
         return ResponseEntity.ok(employeeService.getAllEmployeesWithBalance(pageable));
@@ -53,10 +57,10 @@ public class EmployeeController {
 
 
     /**
-     * Endpoint to register a new employee.
+     * Endpoint to update an employee balance
      *
      * @param request The employee registration request.
-     * @return The registered employee.
+     * @return The updated employee.
      */
     @PostMapping("/updateBalance")
     public ResponseEntity<EmployeeDTO> updateBalance(@Validated @RequestBody EmployeeRequest request) {
@@ -64,6 +68,10 @@ public class EmployeeController {
     }
 
 
+    /**
+     * This part I'm trying to develop our application using Spring Webflux reactive programming
+     * Will do it if have time
+     */
 //    @Autowired
 //    private EmployeeService employeeService;
 //
@@ -105,7 +113,7 @@ public class EmployeeController {
 //                .defaultIfEmpty(ResponseEntity.notFound().build());
 //    }
 
-    // Get all transactions for an employee
+//    // Get all transactions for an employee
 //    @GetMapping("/employee/transactions")
 //    public Flux<CreditTransaction> getTransactionsByEmployee(@RequestParam Long employeeId) {
 //        return employeeService.getTransactionsByEmployeeId(employeeId);

@@ -3,9 +3,11 @@ package com.tellarbanking.credit.entity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import lombok.Builder;
 import lombok.Data;
 
 @Data
+@Builder
 @Entity
 @Table(name = "company")
 public class Company extends BaseEntity {
@@ -15,7 +17,9 @@ public class Company extends BaseEntity {
     @Column(name = "company_name")
     private String companyName;
 
-//    private String address;
-//    private String phone;
-//    private String email;
+    /*
+    private String address;
+    private String phone;
+    private String email;
+    */
 }

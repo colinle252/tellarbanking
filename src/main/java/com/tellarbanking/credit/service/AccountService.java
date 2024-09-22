@@ -15,25 +15,43 @@ public class AccountService {
     @Autowired
     private AccountRepository accountRepository;
 
-
     /**
-     * Registers a new employee.
+     * Create a new account.
      *
-     * @param account The ID of the company to which the employee belongs.
-     * @return The registered employee.
+     * @param account input account parameters
+     * @return The new account of an employee.
      */
     public Account createAccount(Account account) {
         return accountRepository.save(account);
     }
 
+    /**
+     * Get the credit balance of an employee.
+     *
+     * @param employee The employee parameters
+     * @return The new account of an employee.
+     */
     public Account getEmployeeCreditBalance(Employee employee) {
         return accountRepository.findByEmployeeId(employee.getId()).get();
     }
 
-    public List<Account> findAccountsByEmployees(List<Employee> employeeIds) {
-        return accountRepository.findByEmployeeIn(employeeIds);
+    /**
+     * Find accounts which assigned to employees
+     *
+     * @param employees The employee list
+     * @return The new account list those employees.
+     */
+    public List<Account> findAccountsByEmployees(List<Employee> employees) {
+        return accountRepository.findByEmployeeIn(employees);
     }
 
+    /**
+     * Find accounts which assigned to employees
+     *
+     * @param email The employee email
+     * @param email The employee balance
+     * @return The updated account of the employee.
+     */
     public Account updateBalance(Employee email, String balance) {
         Account account = accountRepository.findByEmployeeId(email.getId()).get();
         account.setBalance(new BigDecimal(balance));

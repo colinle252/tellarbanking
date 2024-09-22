@@ -11,7 +11,7 @@ public class Employee extends BaseEntity {
     private String employeeId;
 
     @ManyToOne
-    @JoinColumn(name = "company_id", referencedColumnName = "company_id")
+    @JoinColumn(name = "company_id", referencedColumnName = "id")
     private Company company;
 
     @Column(name = "email")
@@ -20,16 +20,17 @@ public class Employee extends BaseEntity {
     @Column(name = "name")
     private String name;
 
-// @Column(name = "first_name")
-////    private String firstName;
-////
-////    @Column(name = "last_name")
-////    private String lastName;
+    /*
+    @Column(name = "first_name")
+    private String firstName;
 
-//    @Column(name = "date_of_birth")
-//    private String dateOfBirth;
+    @Column(name = "last_name")
+    private String lastName;
 
-//    @Column(name = "phone")
-//    private String phone;
+    @Column(name = "date_of_birth")
+    private String dateOfBirth;
 
+    @Column(name = "phone")
+    private String phone;
+    */
 }

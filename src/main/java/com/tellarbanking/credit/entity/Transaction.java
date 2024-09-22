@@ -20,7 +20,11 @@ public class Transaction extends BaseEntity {
     @Column(name = "amount")
     private BigDecimal amount;
 
-//    private String transactionDate;
-//    private String transactionType;
-//    private String description;
+    @Column(name = "transaction_type")
+    private String transactionType;
+
+    /*
+    private String transactionDate;
+    private String description;
+     */
 }
