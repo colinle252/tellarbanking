@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6128d943-8f16-47e1-845e-c145eb09128c" name="Changes" comment="" />
+    <list default="true" id="6128d943-8f16-47e1-845e-c145eb09128c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,20 +29,29 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
+        <option name="mavenHome" value="$PROJECT_DIR$/../Software/Maven/apache-maven-3.8.8" />
         <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>
   </component>
   <component name="ProjectId" id="2mPExF5CpsTcZrGw0qJCBRuMIN4" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/Users/colinle/Documents/D/Technical/Tellarbanking"
+    "last_opened_file_path": "/Users/colinle/Documents/D/Technical/Tellarbanking",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.3137931",
+    "settings.editor.selected.configurable": "MavenSettings"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -127,6 +139,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.TellarBankingApplication" />
+      <item itemvalue="JUnit.AccountServiceTest" />
+      <item itemvalue="JUnit.EmployeeServiceTest.testCheckCreditBalance" />
+      <item itemvalue="JUnit.EmployeeServiceTest.testGetAllEmployeesWithBalance" />
+      <item itemvalue="JUnit.EmployeeServiceTest.testUpdateBalance" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.TellarBankingApplication" />
@@ -158,5 +177,12 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+      <path value="$PROJECT_DIR$/employee-credit-app" />
+    </ignored-roots>
   </component>
 </project>

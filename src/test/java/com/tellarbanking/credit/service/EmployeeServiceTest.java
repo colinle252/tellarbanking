@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+import com.tellarbanking.credit.converter.EmployeeConverter;
 import com.tellarbanking.credit.converter.EmployeeConverterTest;
 import com.tellarbanking.credit.dto.EmployeeDTO;
 import com.tellarbanking.credit.entity.Account;
@@ -44,7 +45,7 @@ public class EmployeeServiceTest {
     private TransactionService transactionService;
 
     @Mock
-    private EmployeeConverterTest employeeConverterTest;
+    private EmployeeConverter employeeConverter;
 
     @InjectMocks
     private EmployeeService employeeService;
@@ -89,14 +90,14 @@ public class EmployeeServiceTest {
         EmployeeDTO employeeDTO = new EmployeeDTO();
 
         when(employeeRepository.save(any(Employee.class))).thenReturn(employee);
-        when(employeeConverterTest.convert(any(Employee.class))).thenReturn(employeeDTO);
+        when(employeeConverter.convert(any(Employee.class))).thenReturn(employeeDTO);
 
         EmployeeDTO result = employeeService.registerEmployee(request);
 
         verify(employeeRepository, times(1)).save(any(Employee.class));
         verify(accountService, times(1)).createAccount(any(Account.class));
         verify(transactionService, times(1)).createTransaction(any(Transaction.class));
-        verify(employeeConverterTest, times(1)).convert(any(Employee.class));
+        verify(employeeConverter, times(1)).convert(any(Employee.class));
 
         assertNotNull(result);
     }
@@ -105,13 +106,13 @@ public class EmployeeServiceTest {
     void testCheckCreditBalance() {
         when(employeeRepository.findByEmail(request.getEmail())).thenReturn(Optional.of(employee));
         when(accountService.getEmployeeCreditBalance(employee)).thenReturn(account);
-        when(employeeConverterTest.convert(employee)).thenReturn(employeeDTO);
+        when(employeeConverter.convert(employee)).thenReturn(employeeDTO);
 
         EmployeeDTO result = employeeService.checkCreditBalance(request);
 
         verify(employeeRepository, times(1)).findByEmail(request.getEmail());
         verify(accountService, times(1)).getEmployeeCreditBalance(employee);
-        verify(employeeConverterTest, times(1)).convert(employee);
+        verify(employeeConverter, times(1)).convert(employee);
 
         assertNotNull(result);
         assertEquals(account.getBalance(), result.getBalance());
@@ -142,8 +143,8 @@ public class EmployeeServiceTest {
         EmployeeDTO employeeDTO1 = new EmployeeDTO();
         EmployeeDTO employeeDTO2 = new EmployeeDTO();
 
-        when(employeeConverterTest.convert(employee1)).thenReturn(employeeDTO1);
-        when(employeeConverterTest.convert(employee2)).thenReturn(employeeDTO2);
+        when(employeeConverter.convert(employee1)).thenReturn(employeeDTO1);
+        when(employeeConverter.convert(employee2)).thenReturn(employeeDTO2);
 
         List<EmployeeDTO> result = employeeService.getAllEmployeesWithBalance(pageable);
 
@@ -174,7 +175,7 @@ public class EmployeeServiceTest {
         transaction.setAmount(account.getBalance());
 
         EmployeeDTO employeeDTO = new EmployeeDTO();
-        when(employeeConverterTest.convert(employee)).thenReturn(employeeDTO);
+        when(employeeConverter.convert(employee)).thenReturn(employeeDTO);
 
         EmployeeDTO result = employeeService.updateBalance(request);
 
