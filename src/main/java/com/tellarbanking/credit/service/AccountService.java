@@ -48,14 +48,16 @@ public class AccountService {
     /**
      * Find accounts which assigned to employees
      *
-     * @param email The employee email
-     * @param email The employee balance
+     * @param employee The employee
+     * @param balance The employee balance
      * @return The updated account of the employee.
      */
-    public Account updateBalance(Employee email, String balance) {
-        Account account = accountRepository.findByEmployeeId(email.getId()).get();
-        account.setBalance(new BigDecimal(balance));
-
-        return accountRepository.save(account);
+    public Account updateBalance(Employee employee, String balance) {
+        return accountRepository.findByEmployeeId(employee.getId())
+                .map(account -> {
+                    account.setBalance(new BigDecimal(balance));
+                    return accountRepository.save(account);
+                })
+                .orElseThrow(() -> new IllegalArgumentException("Account not found for employee: " + employee.getId()));
     }
 }

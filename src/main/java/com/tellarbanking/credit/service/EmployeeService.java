@@ -17,6 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
@@ -77,7 +78,13 @@ public class EmployeeService {
         transaction.setAmount(account.getBalance());
         transactionService.createTransaction(transaction);
 
-        return employeeConverter.convert(employeeData);
+        return Optional.ofNullable(employeeData)
+                .map(e -> {
+                    EmployeeDTO employeeDTO = employeeConverter.convert(e);
+                    employeeDTO.setBalance(account.getBalance());
+                    return employeeDTO;
+                })
+                .orElseThrow(() -> new RuntimeException("Employee conversion failed"));
 
     }
 
@@ -88,14 +95,14 @@ public class EmployeeService {
      * @return The employee's with balance of account.
      */
     public EmployeeDTO checkCreditBalance(EmployeeRequest request) {
-        Employee employee = employeeRepository.findByEmail(request.getEmail()).get();
-
-        Account account = accountService.getEmployeeCreditBalance(employee);
-
-        EmployeeDTO employeeDTO = employeeConverter.convert(employee);
-        employeeDTO.setBalance(account.getBalance());
-
-        return employeeDTO;
+        return employeeRepository.findByEmail(request.getEmail())
+                .map(employee -> {
+                    Account account = accountService.getEmployeeCreditBalance(employee);
+                    EmployeeDTO employeeDTO = employeeConverter.convert(employee);
+                    employeeDTO.setBalance(account.getBalance());
+                    return employeeDTO;
+                })
+                .orElseThrow(() -> new RuntimeException("Employee not found"));
     }
 
     /**
@@ -129,7 +136,8 @@ public class EmployeeService {
      */
     @Transactional(propagation = Propagation.REQUIRES_NEW)
     public EmployeeDTO updateBalance(EmployeeRequest request) {
-        Employee employee = employeeRepository.findByEmail(request.getEmail()).get();
+        Employee employee = employeeRepository.findByEmail(request.getEmail())
+                .orElseThrow(() -> new RuntimeException("Employee not found"));
 
         Account account = accountService.updateBalance(employee, request.getBalance());
 
